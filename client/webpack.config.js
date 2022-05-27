@@ -23,10 +23,12 @@ module.exports = () => {
         title: 'Webpack Plugin',
       }),
       new InjectManifest({
-        swSrc: './src/sw.js',
-        swDest: 'service-worker.js',
+        swSrc: './src-sw.js',
+        swDest: 'src-sw.js',
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
         name: 'text-editor',
         short_name: 'jate',
         description: 'write text',
